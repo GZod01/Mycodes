@@ -17,3 +17,8 @@ def ecriretexte(txt):
     print(txt)
 
 ecriretexte("hello world how are you")
+
+def multi(a,b):
+    return a*b
+print(multi(1,2))
+x = multi(1,2) #x sera = à 1*2 = 2
