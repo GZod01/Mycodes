@@ -12,3 +12,8 @@ elif nombre >2: #sinon si la variable nombre est supérieure à 2
 elif nombre < 0: #sinon si la variable nombre est inférieure à 0
     print("je suis inférieur à 0")
 
+# les fonctions: 
+def ecriretexte(txt):
+    print(txt)
+
+ecriretexte("hello world how are you")
