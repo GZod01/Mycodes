@@ -1,2 +1,2 @@
 # codes
-The repository to my codes
+The repository of my codes
