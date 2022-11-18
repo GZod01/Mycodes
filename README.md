@@ -14,7 +14,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/gzod01/codes/">
-    <img src="readme/logo.png" alt="Logo" width="80" height="80">
+    <img src="readme/devicon1.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">codes</h3>
