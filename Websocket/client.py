@@ -1,7 +1,7 @@
 import asyncio
 import websockets
 async def test():
-    async with websockets.connect('wss://demo.piesocket.com/v3/channel_1?api_key=YOUR_API_KEY') as websocket:
+    async with websockets.connect('192.168.1.19:8000') as websocket:
         await websocket.send("hello")
         response = await websocket.recv()
         print(response)
