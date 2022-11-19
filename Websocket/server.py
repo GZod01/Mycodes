@@ -1,4 +1,5 @@
 from Robot import Robot
+import time
 robot = robot()
 import asyncio
 
@@ -24,12 +25,16 @@ start_server = websockets.serve(handler, "localhost", 8000)
 asyncio.get_event_loop().run_until_complete(start_server)
 
 asyncio.get_event_loop().run_forever()
-
+if data == 'hello':
+    print("i received the message")
+    robot.Avancer()
+    time.sleep(20)
+    robot.Stop()
 if data == 'up':
-    robot.avancer()
+    robot.Avancer()
 if data == 'right':
-    robot.droite()
+    robot.Droite()
 if data == 'left':
-    robot.gauche()
+    robot.Gauche()
 if data == 'down':
-    robot.reculer()
+    robot.Reculer()
