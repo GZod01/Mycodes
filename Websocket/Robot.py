@@ -13,19 +13,17 @@ class Robot:
     def init(self,pgauche,pdroite):
         self.pingauche=pgauche
         self.pindroite=pdroite
-    def checkforpin(self):
-        if (self.pingauche==0 or self.pindroite==0) and (self.pingauche==0 and self.pindroite==0):
-            print('there is an error, the pin are not defined')
-        else:
-            pass
+    #def checkforpin(self):
+    #    if (self.pingauche==0 or self.pindroite==0) and (self.pingauche==0 and self.pindroite==0):
+    #        print('there is an error, the pin are not defined')
+    #    else:
+    #        pass
     def moteurG(self,n):
-        self.checkforpin()
         n=int(n)
         driver=self.Driver
         driver.setvitesse(self.pingauche,n)
         self.current_vitesseg=n
     def moteurD(self,n):
-        self.checkforpin()
         n=int(n)
         driver=self.Driver
         driver.setvitesse(self.pindroite,n)
