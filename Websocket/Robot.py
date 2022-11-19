@@ -1,6 +1,7 @@
 class driver:
     def setvitesse(self,pin,vitesse):
         print("le moteur avec le pin ",pin," avance à la vitesse", vitesse,".")
+        dri.set_esc(pin,vitesse)
 class Robot:
     Driver=driver()
     current_vitessed=0
