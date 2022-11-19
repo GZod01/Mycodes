@@ -2,7 +2,7 @@ from Robot import Robot
 import time
 robot = robot()
 import asyncio
-
+robot.init(3,4)
 import websockets
 
 # create handler for each connection
