@@ -5,7 +5,7 @@ from random import randint
 from PIL import Image, ImageFile
 from pprint import pprint
 import numpy as np
-class FlouPy():
+class PyFlouProgram():
     img = None
     imgcopie = None
     resizesize = 0
@@ -62,10 +62,10 @@ class FlouPy():
                 self.pixelscopie[i, j] = self.__floutage__(self.pixels, i, j, dist,img)
         self.imgcopie.resize((img.size[0]*self.resizesize),(img.size[1]*self.resizesize))
         self.imgcopie.save(exitfp)
-    def floupy(self,initialfp,exitfp,distance,resizesize):
-        startfp = initialfp
-        endfp = exitfp
-        dist = distance
-        tailleresize = resizesize
-        self.__initialisation__(startfp,endfp,dist,tailleresize)
-        self.__flouend__()
+def FlouPy(initialfp,exitfp,distance,resizesize):
+    startfp = initialfp
+    endfp = exitfp
+    dist = distance
+    tailleresize = resizesize
+    PyFlouProgram().__initialisation__(startfp,endfp,dist,tailleresize)
+    PyFlouProgram().__flouend__()
