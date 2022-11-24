@@ -1,10 +1,7 @@
 #<<<<<<<<<<---------->>>>>>>>>>
 # Made by G_Zod, Github= gzod01, Discord= G_Zod#1311
 #<<<<<<<<<<---------->>>>>>>>>>
-from random import randint
 from PIL import Image, ImageFile
-from pprint import pprint
-import numpy as np
 class PyFlouProgram():
     img = None
     imgcopie = None
