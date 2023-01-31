@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://localhost:8000');
+const socket = new WebSocket(prompt('server address (ws or wss): '));
 
 socket.addEventListener('message', function (event) {
     e=JSON.parse(event)
