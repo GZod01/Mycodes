@@ -1,5 +1,12 @@
-const socket = new WebSocket(prompt('server address (ws or wss): '));
-
+if (sessionStorage.getItem('serveraddr')==null){
+    let addr = prompt('server address (ws or wss): ')
+    const socket = new WebSocket(addr);
+    sessionStorage.setItem('serveraddr',addr)
+}
+else if (sessionStorage.getItem('serveraddr')!=null){
+    const socket = new WebSocket(sessionStorage.getItem('serveraddr'))
+}
+else{alert('error')}
 socket.addEventListener('message', function (event) {
     e=JSON.parse(event)
     for(let i = 0; i < length(e); i++){
