@@ -8,13 +8,13 @@ socket.addEventListener('message', function (event) {
         d.className = 'message'
         let u = document.createElement('div')
         u.innerText = m["username"]
-        u.className= 'username'
+        u.className= 'messageusername'
         let c = document.createElement('div')
         c.innerText = m["content"]
-        c.className = 'content'
+        c.className = 'messagecontent'
         let h = document.createElement('div')
         h.innerText= m['date']
-        h.className = 'date'
+        h.className = 'messagedate'
         d.appendChild(u)
         d.appendChild(c)
         d.appendChild(h)
@@ -39,4 +39,8 @@ function sendtoserver(){
         socket.send(strtosend)
     }
 }
+function toconnect(){
+
+}
 document.getElementById('sendbutton').addEventListener('click',sendtoserver)
+document.getElementById('connect').addEventListener('click',toconnect)
