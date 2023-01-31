@@ -40,7 +40,8 @@ function sendtoserver(){
     }
 }
 function toconnect(){
-
+    let usrname = prompt('your username: ')
+    sessionStorage.setItem('username',usrname)
 }
 document.getElementById('sendbutton').addEventListener('click',sendtoserver)
 document.getElementById('connect').addEventListener('click',toconnect)
