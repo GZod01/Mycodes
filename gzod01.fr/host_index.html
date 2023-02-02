@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>Héberger vos pages sur mon site:</h1>
+    <div class="description">
+        <p>Vous voulez héberger des pages internet mais ne savez pas comment faire?</p>
+        <br>
+        <p>Il y a plusieurs moyens de le faire:</p>
+        <br>
+        <ul>
+        <li><ul>Vous êtes un développeur et avez de bonnes compétences en HTML, JS, CSS etc.:
+            <li>Préparez votre fichier ou dossier</li>
+            <li>Envoyez le moi (formulaire ci dessous, en selectionnant l'option dev)</li>
+            <li>Attendez que je lise votre fichier ou dossier pour verifier qu'il est sécurisé</li>
+        </li>
+        <li><ul>Vous êtes un débutant et vous voulez apprendre HTML:
+            <li>Lisez des cours HTML sur W3Schools ou d'autres sites (je créerai peut être quelques articles pour enseigner quelques bases d'HTML, JS, CSS)</li>
+            <li>Faites les memes étapes que pour les développeurs experimentés.</li>
+        </ul></li>
+        <li><ul>Vous préferez que ce soit moi qui crée votre site:
+            <li>Envoyez moi ce que vous voulez qu'il y ait dans votre pages par le formulaire de contact ci dessous, en selectionnant l'option 'creation'</li>
+        </ul></li>
+        </ul>
+    </div>
+    <div class="contact">
+        <form onsubmit="sendmail()">
+            <label for="name">Votre Nom:</label><input type="text" name="name" id="name"><br>
+            <label for="email">Votre Email:</label><input type="email" name="email" id="email"><br>
+            <select name="subject" id="subject">
+                <option value="dev">DEV</option>
+                <option value="create">CREATION</option>
+            </select>
+            <textarea name="message" id="message" cols="30" rows="10">Votre message ici...</textarea>
+            <button type="submit">Envoyer</button>
+            <button type="reset">Effacer le formulaire</button>
+        </form>
+    </div>
+    <script>
+        function gid(id){
+            return document.getElementById(id)
+        }
+        function gidv(id){
+            return gid(id).value
+        }
+        function sendmail(){
+            location = `mailto:gzod01@gzod01.fr?subject=host-${gidv('subject')}&body=name: ${gidv('name')} email: ${gidv('email')}<br> ----<br> content: <br>${gidv('message')}`
+        }
+    </script>
+</body>
+</html>
