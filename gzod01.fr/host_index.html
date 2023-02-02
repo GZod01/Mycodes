@@ -49,7 +49,7 @@
             return gid(id).value
         }
         function sendmail(){
-            location = `mailto:gzod01@gzod01.fr?subject=host-${gidv('subject')}&body=name: ${gidv('name')} email: ${gidv('email')}<br> ----<br> content: <br>${gidv('message')}`
+            location = `mailto:gzod01@gzod01.fr?subject=host-${gidv('subject')}&body=name: ${gidv('name')} email: ${gidv('email')}%0D%0A ----%0D%0A content: %0D%0A${gidv('message')}`
         }
     </script>
 </body>
