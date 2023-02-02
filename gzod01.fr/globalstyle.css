@@ -10,8 +10,9 @@
 .globalfooter{
     display: flex ;
     text-align: center;
-    bottom:0%;
+    bottom:0;
     width: 100%;
+    left: 0;
     background-color:var(--scdr-bg-color) ;
     color: var(--scdr-txt-color);
 }
