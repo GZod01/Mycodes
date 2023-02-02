@@ -1,0 +1,17 @@
+:root{
+    /*the color that will be switch */
+    --main-bg-color: white;
+    --main-txt-color: black;
+    --scdr-bg-color: lightgray;
+    --scdr-txt-color: black;
+}
+
+
+.globalfooter{
+    display: flex ;
+    text-align: center;
+    bottom:0%;
+    width: 100%;
+    background-color:var(--scdr-bg-color) ;
+    color: var(--scdr-txt-color);
+}
