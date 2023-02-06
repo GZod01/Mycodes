@@ -5,8 +5,14 @@
     --scdr-bg-color: lightgray;
     --scdr-txt-color: black;
 }
-
-body{ min-height: 100vh; margin:0; display:flex; flex-direction:column; }
+body {
+    min-height: 100vh;
+    margin: 0;
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+    font-size: xxx-large;
+}
 header{
     height:20px;
     margin:0;
@@ -45,5 +51,6 @@ footer{
     width:5%
 }
 .content{
-    font-size: 100px;
+    color: var(--main-txt-color);
+    background-color: var(--main-bg-color);
 }
