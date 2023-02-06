@@ -77,7 +77,8 @@ function gettheme(){
     let r = document.querySelector(':root')
     if(colorScheme==='dark'){
         r.style.setProperty('--main-bg-color','darkslateblue')
-        r.style.setProperty('--')
+        r.style.setProperty('--main-txt-color','white')
+        r.style.setProperty('--scdr-bg-color','darkslategray')
     }
     
 }

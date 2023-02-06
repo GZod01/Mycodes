@@ -3,7 +3,7 @@
     --main-bg-color: white;
     --main-txt-color: black;
     --scdr-bg-color: lightgray;
-    --scdr-txt-color: black;
+    --scdr-txt-color: var(--main-txt-color);
 }
 @media (prefers-color-scheme:dark){
     body::after{
