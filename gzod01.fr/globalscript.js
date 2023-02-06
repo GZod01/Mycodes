@@ -10,7 +10,7 @@
         <a href="/about.html">A Propos</a>
         <a href="/legal.html">Mentions Légales</a>
     </div>
-    <span class=themebutton onclick=switchtheme>Switch the theme</span>
+    <span class=themebutton onclick=switchtheme()>Switch the theme</span>
 </header>
 
 footer:
@@ -41,7 +41,8 @@ window.onload=function(){
     <a href="/sitemap.html">Plan Du Site</a>
     <a href="/about.html">A Propos</a>
     <a href="/legal.html">Mentions Légales</a>
-</div>`
+</div>
+<span class=themebutton onclick=switchtheme()>Switch the theme</span>`
     let default_footer = document.createElement('footer')
     default_footer.innerHTML = `
 <div class=footerleft>
