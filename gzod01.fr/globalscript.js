@@ -80,6 +80,11 @@ function gettheme(){
         r.style.setProperty('--main-txt-color','white')
         r.style.setProperty('--scdr-bg-color','darkslategray')
     }
+    else if(colorScheme==='dark'){
+        r.style.setProperty('--main-bg-color','white')
+        r.style.setProperty('--main-txt-color','black')
+        r.style.setProperty('--scdr-bg-color','light gray ')
+    }
     
 }
 
