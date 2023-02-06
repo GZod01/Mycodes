@@ -41,6 +41,9 @@ footer{
     right:0;
     width:50%
 }
+.themebutton{
+    
+}
 .content{
     color: var(--main-txt-color);
     background-color: var(--main-bg-color);
