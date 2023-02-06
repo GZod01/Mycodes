@@ -11,7 +11,7 @@ body {
     word-break: break-word;
     display: flex;
     flex-direction: column;
-    font-size: xxx-large;
+    font: inherit;
 }
 header{
     height:20px;
