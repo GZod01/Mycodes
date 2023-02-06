@@ -70,9 +70,9 @@ function gettheme(){
     }
     else{
         var colorScheme = getComputedStyle(document.body,':after').content
-        if(colorScheme==='dark'){}
-        else if(colorScheme==='light'){}
-        else{colorScheme==='light'}
+        if(colorScheme==='"dark"'){colorScheme='dark'}
+        else if(colorScheme==='"light"'){colorScheme='light'}
+        else{colorScheme='light'}
     }
     let r = document.querySelector(':root')
     if(colorScheme==='dark'){
@@ -80,7 +80,7 @@ function gettheme(){
         r.style.setProperty('--main-txt-color','white')
         r.style.setProperty('--scdr-bg-color','darkslategray')
     }
-    else if(colorScheme==='dark'){
+    else if(colorScheme==='light'){
         r.style.setProperty('--main-bg-color','white')
         r.style.setProperty('--main-txt-color','black')
         r.style.setProperty('--scdr-bg-color','light gray ')
