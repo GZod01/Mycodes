@@ -12,52 +12,7 @@
 <body>
     <div id="header"></div>
     <div class=content>
-        <script>
-                function send(sendvalue){
-                        document.body.innerHTML = `
-                <h1>You need to send this to mee: (copy and paste to mail or other)</h1>
-            <code style="border: 2px dotted;">
-            <p>Hello, my usrname is ${username.value}, i want to host html page, this is the code:</p>
-            <p>${sendvalue}</p>
-            </code>
-            If you want to learn html you can see the w3schools course about html or i maybe will create a page with course to learn html
-            `
-                function send_to_gzod01(){
-                        if(checkbegin.value){
-                                let htmltosend = `
-            <head>
-            <title>${title.value}</title>
-            </head>
-            <h1>${h1.value}</h1>
-            <p>My name is ${user.value}</p>
-            <p>${content.value}</p>
-            `
-                send(htmltosend)
-                        }
-                        else if(checkdev.value){
-                                send(JSON.stringify(html_content.innerHTML))
-                        }
-                        else{ indicator.innerHTML = 'SORRY, you don\'t have check any checkbox you need to check one checkbox'}
-                }}
-        </script>
-        <h1>Host page on my site</h1>
-        <h1 id=indicator>INDICATOR</h1>
-        <p>You want to learn html, js etc., perform your skill in html or share page with the world? so you need an host... this is your index page builder (and message builder to ask me for creating your page... (TODO: FTP for pages or create php code that create files....)</p>
-        <label>SO if you are beginner in html you will need this form to create your page:</label>
-        <div>
-                <input type=checkbox id=checkbegin name=checkbegin><label for=checkbegin>I'm a beginner</label>
-                <input type=text id=title placeholder=title>
-                <input type=text id=user placeholder=user>
-                <input type=text id=h1 placeholder="title to show on your page">
-                <textarea id=content>Your text here...</textarea>
-        </div>
-        <label>Else if you have good skill in html you can create (or paste) your code in this textarea (this is no VSCODE or any other IDE so there is no color on keywords</label>
-        <div>
-                <input type=checkbox id=checkdev name=checkdev><label for=checkdev>I'm not a beginner</label>
-                <textarea id=html_content>YOUR HTML CODE</textarea>
-        </div>
-        <input type=text id=username placeholder="your username here please...">
-        <button onclick="send_to_gzod01()">Click here if you have finish</button>
+        
     </div>
     <div id="footer"></div>
 </body>
