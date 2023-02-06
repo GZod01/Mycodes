@@ -79,7 +79,7 @@ function gettheme(){
     if(colorScheme==='dark'){
         r.style.setProperty('--main-bg-color','midnightblue')
         r.style.setProperty('--main-txt-color','white')
-        r.style.setProperty('--scdr-bg-color','navy')
+        r.style.setProperty('--scdr-bg-color','darkslateblue')
     }
     else if(colorScheme==='light'){
         r.style.setProperty('--main-bg-color','white')
