@@ -1,7 +1,6 @@
 /*header:
 <header>
     <div class="nav">
-        <a href="/"><img width=50 height=50src="/pictures/gzod01.png"></a>
         <a href="/">Accueil</a>
         <a href="/games.html">Jeux</a>
         <a href="/services.html">Services</a>
@@ -36,7 +35,6 @@ window.onload=function(){
     let default_header = document.createElement('header')
     default_header.innerHTML = `
 <div class="nav">
-    <a href="/"><img width=50 height=50src="/pictures/gzod01.png"></a>
     <a href="/">Accueil</a>
     <a href="/games.html">Jeux</a>
     <a href="/services.html">Services</a>
