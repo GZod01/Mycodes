@@ -4,6 +4,8 @@
     --main-txt-color: black;
     --scdr-bg-color: lightgray;
     --scdr-txt-color: var(--main-txt-color);
+    --hello: rgb(26, 24, 56);
+
 }
 @media (prefers-color-scheme:dark){
     body::after{
