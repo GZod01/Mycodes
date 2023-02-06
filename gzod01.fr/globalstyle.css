@@ -17,6 +17,7 @@ header{
     margin:0;
     background-color: var(--scdr-bg-color);
     color: var(--scdr-txt-color);
+    padding-bottom: 5%;
 }
 footer{
     margin-top: auto;
