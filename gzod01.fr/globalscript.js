@@ -1,1 +1,41 @@
+/*header:
+<header>
+    <div class="nav">
+        <a href="/"><img src="/pictures/gzod01.png"></a>
+        <a href="/">Accueil</a>
+        <a href="/games.html">Jeux</a>
+        <a href="/services.html">Services</a>
+        <a href="/contact.html">Me contacter</a>
+        <a href="/sitemap.html">Plan Du Site</a>
+        <a href="/about.html">A Propos</a>
+        <a href="/legal.html">Mentions Légales</a>
+    </div>
+</header>
+
+footer:
+<footer>
+    <div class=footerleft>
+        <a href="/">Accueil</a>
+        <a href="/games.html">Jeux</a>
+        <a href="/services.html">Services</a>
+    </div>
+    <div class=footerright>
+        
+    <div class="nav">
+        <a href="/"><img src="/pictures/gzod01.png"></a>
+        <a href="/">Accueil</a>
+        <a href="/games.html">Jeux</a>
+        <a href="/services.html">Services</a>
+        <a href="/contact.html">Me contacter</a>
+        <a href="/sitemap.html">Plan Du Site</a>
+        <a href="/about.html">A Propos</a>
+        <a href="/legal.html">Mentions Légales</a>
+    </div>
+*/
+window.onload=function(){
+    let default_header = document.createElement('header')
+}
+
+
+
 document.getElementById('footer').replaceWith()
