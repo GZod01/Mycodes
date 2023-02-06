@@ -67,3 +67,6 @@ footer{
     position: fixed;
     cursor: pointer;
 }
+.themebutton:hover{
+    background-color: grey;
+}
