@@ -59,7 +59,7 @@ window.onload=function(){
     `
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)
-
+    gettheme()
 }
 function gettheme(){
     if(localStorage.getItem('colorscheme')==='dark'){
