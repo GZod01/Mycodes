@@ -1,7 +1,7 @@
 /*header:
 <header>
     <div class="nav">
-        <a href="/"><img src="/pictures/gzod01.png"></a>
+        <a href="/"><img width=50 height=50src="/pictures/gzod01.png"></a>
         <a href="/">Accueil</a>
         <a href="/games.html">Jeux</a>
         <a href="/services.html">Services</a>
