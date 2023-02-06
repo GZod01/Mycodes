@@ -10,6 +10,7 @@
         <a href="/about.html">A Propos</a>
         <a href="/legal.html">Mentions Légales</a>
     </div>
+    <span class=themebutton onclick=switchtheme>Switch the theme</span>
 </header>
 
 footer:
@@ -59,5 +60,25 @@ window.onload=function(){
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)
 
+}
+function gettheme(){
+    if(localStorage.getItem('colorscheme')==='dark'){
+        var colorScheme = 'dark'
+    }
+    else if(localStorage.getItem('colorscheme')==='light'){
+        var colorScheme = 'light'
+    }
+    else{
+        var colorScheme = getComputedStyle(document.body,':after').content
+        if(colorScheme==='dark'){}
+        else if(colorScheme==='light'){}
+        else{colorScheme==='light'}
+    }
+    let r = document.querySelector(':root')
+    if(colorScheme==='dark'){
+        r.style.setProperty('--main-bg-color','darkslateblue')
+        r.style.setProperty('--')
+    }
+    
 }
 

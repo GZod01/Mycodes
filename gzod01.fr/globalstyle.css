@@ -5,6 +5,18 @@
     --scdr-bg-color: lightgray;
     --scdr-txt-color: black;
 }
+@media (prefers-color-scheme:dark){
+    body::after{
+        content: 'dark';
+        display: none;
+    }
+}
+@media (prefers-color-scheme:light){
+    body::after{
+        content: 'light';
+        display: none;
+    }
+}
 body {
     min-height: 100vh;
     margin: 0;
@@ -44,4 +56,8 @@ footer{
 .content{
     color: var(--main-txt-color);
     background-color: var(--main-bg-color);
+}
+.themebutton{
+    right:0;
+    position:fixed
 }
