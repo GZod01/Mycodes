@@ -87,4 +87,15 @@ function gettheme(){
     }
     
 }
+function switchtheme(){
+    let r = document.querySelector(':root')
+    if('white'===r.style.getProperty('--main-txt-color')){
+        localStorage.setItem('colorscheme','light')
+        gettheme()
+    }
+    else if('black'===r.style.getProperty('--main-txt-color')){
+        localStorage.setItem('colorscheme','dark')
+        gettheme()
+    }
+}
 
