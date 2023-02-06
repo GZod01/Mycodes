@@ -25,9 +25,7 @@ footer:
         <a href="/sitemap.html">Plan Du Site</a><br>
         <a href="/about.html">A Propos</a><br>
         <a href="/legal.html">Mentions Légales</a><br>
-    </div>
-    <span class=colortheme>
-              
+    </div>              
 </footer>
 */
 window.onload=function(){
