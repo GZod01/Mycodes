@@ -83,7 +83,7 @@ function gettheme(){
     else if(colorScheme==='light'){
         r.style.setProperty('--main-bg-color','white')
         r.style.setProperty('--main-txt-color','black')
-        r.style.setProperty('--scdr-bg-color','light gray ')
+        r.style.setProperty('--scdr-bg-color','lightgray ')
     }
     
 }
