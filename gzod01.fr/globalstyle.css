@@ -17,13 +17,13 @@ footer{
     background-color:var(--scdr-bg-color) ;
     color: var(--scdr-txt-color);
 }
-.globalfooterleft{
+.footerleft{
     border-right: solid var(--scdr-txt-color);
     height: 100%;
     left:0;
     width:50%;
 }
-.globalfooterright{
+.footerright{
     border-left: solid var(--scdr-txt-color);
     height: 100%;
     right:0;
