@@ -24,6 +24,8 @@ body {
     display: flex;
     flex-direction: column;
     font: inherit;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
 }
 header{
     margin:0;
@@ -52,10 +54,6 @@ footer{
     height: 100%;
     right:0;
     width:50%
-}
-.content{
-    color: var(--main-txt-color);
-    background-color: var(--main-bg-color);
 }
 .themebutton{
     right:0;
