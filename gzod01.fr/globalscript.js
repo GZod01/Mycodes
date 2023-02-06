@@ -25,10 +25,7 @@ footer:
         <a href="/sitemap.html">Plan Du Site</a><br>
         <a href="/about.html">A Propos</a><br>
         <a href="/legal.html">Mentions Légales</a><br>
-    </div>
-    <span class="topbutton">
-        TOP
-    </span>        
+    </div>      
 </footer>
 */
 window.onload=function(){
@@ -58,9 +55,6 @@ window.onload=function(){
     <a href="/about.html">A Propos</a><br>
     <a href="/legal.html">Mentions Légales</a><br>
 </div>
-<span class="topbutton">
-    TOP
-</span>  
     `
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)

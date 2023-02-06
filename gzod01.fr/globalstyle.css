@@ -40,15 +40,6 @@ footer{
     right:0;
     width:50%
 }
-.topbutton{
-    border-radius: 25%;
-    background-color: darkblue;
-    cursor:pointer;
-    right:0;
-    bottom:0;
-    height:5%;
-    width:5%
-}
 .content{
     color: var(--main-txt-color);
     background-color: var(--main-bg-color);
