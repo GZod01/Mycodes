@@ -33,6 +33,12 @@ header{
     color: var(--scdr-txt-color);
     padding-bottom: 2px;
 }
+footer a{
+    color: var(--scdr-txt-color)
+}
+header a{
+    color: var(--scdr-txt-color)
+}
 footer{
     margin-top: auto;
     border-top:solid var(--scdr-txt-color);
