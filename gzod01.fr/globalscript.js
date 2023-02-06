@@ -64,6 +64,9 @@ window.onload=function(){
     TOP
 </span>  
     `
+    document.getElementById('header').replaceWith(default_header)
+    document.getElementById('footer').replaceWith(default_footer)
+
 }
 
 
