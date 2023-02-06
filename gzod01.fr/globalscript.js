@@ -67,6 +67,3 @@ window.onload=function(){
 
 }
 
-
-
-document.getElementById('footer').replaceWith()
