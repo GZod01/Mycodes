@@ -77,9 +77,9 @@ function gettheme(){
     }
     let r = document.querySelector(':root')
     if(colorScheme==='dark'){
-        r.style.setProperty('--main-bg-color','darkblue')
+        r.style.setProperty('--main-bg-color','midnightblue')
         r.style.setProperty('--main-txt-color','white')
-        r.style.setProperty('--scdr-bg-color','darkslategray')
+        r.style.setProperty('--scdr-bg-color','navy')
     }
     else if(colorScheme==='light'){
         r.style.setProperty('--main-bg-color','white')
