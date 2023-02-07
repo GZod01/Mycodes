@@ -70,3 +70,21 @@ footer{
 .themebutton:hover{
     background-color: grey;
 }
+button{
+    border-radius: 25%;
+    border:solid var(--scdr-txt-color);
+    background-color: var(--scdr-bg-color);
+    color: var(--scdr-txt-color);
+}
+form {
+    border: solid var(--scdr-txt-color);
+    border-radius: 25%;
+    background-color: var(--scdr-bg-color);
+    color: var(--scdr-txt-color)
+}
+fieldset{
+    border:solid var(--main-txt-color);
+    border-radius: 25%;
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+}
