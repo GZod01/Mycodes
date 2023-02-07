@@ -1,0 +1,15 @@
+<script>
+    function fetchpronote(urlofapi, action, cas, servurl, password, usrname){
+        let requestforpronote = {
+            "type": `${action}`,
+            "username": `${usrname}`,
+            "password": `${password}`,
+            "url": `${servurl}`,
+            "cas": `${cas}` 
+        }
+        fetch(urlofapi, {
+            method: "POST",
+            body: requestforpronote
+        })
+    }
+</script>
