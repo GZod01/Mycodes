@@ -10,6 +10,37 @@
         fetch(urlofapi, {
             method: "POST",
             body: requestforpronote
-        })
+        }).then((data)=> {return(data)})
     }
 </script>
+<body>
+<input type="url" id="servurl"><br>
+CAS = cas d'authentification spéciale (passant par un autre service comme l'ent etc...) si votre académie n'a pas de cas mettez NONE
+<select id="cas">
+    <option value="none">NONE</option>
+    <option value="ac-rouen">Ac-Rouen</option>
+</select><br>
+<input type="text" id="usrname"><br>
+<input type="password" id="password"><br>
+<button onclick="login()">LOGIN</button><br>
+<pre id="output"></pre><br>
+
+<input hidden="true" id="fetchusrname">
+<input hidden="true" id="fetchpassword">
+<input hidden="true" id="islogin?" type="checkbox">
+
+<script>
+    function login(){
+        let svurl = document.getElementById('servurl').value
+        let currentcas = document.getElementById('cas').value
+        let urlofapp = '' /* TODO : 'http://pronote-api.gzod01.fr'*/
+        let un = document.getElementById('usrname').value
+        let pw = document.getElementById('password').value
+        let op = document.getElementById('output')
+        document.getElementById('fetchusrname').value=`${un}`
+        document.getElementById('fetchpassword').value=`${pw}`
+        document.getElementById('islogin?').value=true
+        op.innerHTML=JSON.stringify(fetchpronote(urlofapp, 'fetch', currentcas, svurl, pw, un))
+    }
+</script>
+</body>
