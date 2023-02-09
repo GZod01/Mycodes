@@ -20,5 +20,6 @@ function transformpage(docstr, titleofdoc){
 </body>
 </html>
     `
+    return toreturn
 }
 window.onload = () => {document.querySelector(':root').innerHTML = transformpage(document.getElementById('content'),document.title)}
