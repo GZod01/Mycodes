@@ -3,8 +3,12 @@ Help(){
     echo "A script for creating page easily with the gzod01.fr api"
     echo "The only one argument you have to enter is the title of the file without the .html and without space (use - instead of space)"
 }
-CPAGE(){
-htmlfile = "$1.html"
+
+if [ $# -eq 0 ]
+  then
+    Help
+else
+    htmlfile = "$1.html"
 cat > $htmlfile <<-END
     <!DOCTYPE html>
 <html lang="fr">
@@ -26,10 +30,5 @@ cat > $htmlfile <<-END
 </body>
 </html>
 END
-}
-if [ $# -eq 0 ]
-  then
-    HELP
-else
-    CPAGE
+
 fi
