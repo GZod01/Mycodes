@@ -30,6 +30,7 @@ cat <<-END
 </body>
 </html>
 END
+fi
 else 
     cat > "$2" <<-END
 <!DOCTYPE html>
