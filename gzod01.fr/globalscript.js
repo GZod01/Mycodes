@@ -35,13 +35,10 @@ window.onload=function(){
         // The API call was successful!
         return response.text();
     }).then(function (html) {
-    
-        // Convert the HTML string into a document object
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, 'text/html');
         return doc
     }).catch(function (err) {
-        // There was an error
         console.warn('Something went wrong.', err);
     });
     default_header.appendChild(getheader)
@@ -50,13 +47,10 @@ window.onload=function(){
         // The API call was successful!
         return response.text();
     }).then(function (html) {
-    
-        // Convert the HTML string into a document object
         let parser = new DOMParser();
         let doc = parser.parseFromString(html, 'text/html');
         return doc
     }).catch(function (err) {
-        // There was an error
         console.warn('Something went wrong.', err);
     });
     default_footer.appendChild(getfooter)
