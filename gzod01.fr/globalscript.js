@@ -29,7 +29,7 @@ footer:
     </div>              
 </footer>
 */
-window.onload=function(){
+function getpartials(){
     let default_header = document.createElement('header')
     let getheader = fetch('//api.gzod01.fr/partials/header.html').then(function (response) {
         // The API call was successful!
@@ -56,6 +56,8 @@ window.onload=function(){
     default_footer.appendChild(getfooter)
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)
+}
+window.onload=function(){
     gettheme()
 }
 function gettheme(){
