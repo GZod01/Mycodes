@@ -58,6 +58,7 @@ function getpartials(){
     document.getElementById('footer').replaceWith(default_footer)
 }
 window.onload=function(){
+    getpartials()
     gettheme()
 }
 function gettheme(){
