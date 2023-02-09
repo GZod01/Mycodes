@@ -7,8 +7,8 @@ Help(){
 if [ $# -eq 0 ]
   then
     Help
-else if [ $# -eq 1]
-then
+else if [ $# -eq 1 ]
+  then
 cat <<-END
 <!DOCTYPE html>
 <html lang="fr">
