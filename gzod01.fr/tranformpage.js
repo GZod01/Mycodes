@@ -1,4 +1,5 @@
-function transformpage(docstr, titleofdoc){
+"OK this is not functionnig so i create a server_side python script for transform pages..."
+/*function transformpage(docstr, titleofdoc){
     let toreturn = `
     <!DOCTYPE html>
 <html lang="fr">
@@ -22,4 +23,4 @@ function transformpage(docstr, titleofdoc){
     `
     return toreturn
 }
-window.onload = () => {document.querySelector(':root').innerHTML = transformpage(document.getElementById('content'),document.title)}
+window.onload = () => {document.querySelector(':root').innerHTML = transformpage(document.getElementById('content'),document.title)}*/
