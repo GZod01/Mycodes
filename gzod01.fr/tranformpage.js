@@ -1,4 +1,4 @@
-"OK this is not functionnig so i create a server_side javascript command for transform pages..."
+"OK this is not functionnig so i create a command for create ready pages..."
 /*function transformpage(docstr, titleofdoc){
     let toreturn = `
     <!DOCTYPE html>
