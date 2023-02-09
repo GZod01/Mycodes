@@ -44,20 +44,20 @@ window.onload=function(){
 </div>
 <span class=themebutton onclick=switchtheme()>Switch the theme</span>`
     let default_footer = document.createElement('footer')
-    default_footer.innerHTML = `
-<div class=footerleft>
-    <a href="/">Accueil</a><br>
-    <a href="/games.html">Jeux</a><br>
-    <a href="/services.html">Services</a><br>
-    <a href="/projects.html">Projets</a><br>
-</div>
-<div class=footerright>
-    <a href="/contact.html">Me contacter</a><br>
-    <a href="/sitemap.html">Plan Du Site</a><br>
-    <a href="/about.html">A Propos</a><br>
-    <a href="/legal.html">Mentions Légales</a><br>
-</div>
-    `
+    let getfooter = fetch('//api.gzod01.fr/partials/footer.html').then(function (response) {
+        // The API call was successful!
+        return response.text();
+    }).then(function (html) {
+    
+        // Convert the HTML string into a document object
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        return doc
+    }).catch(function (err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+    });
+    default_footer.appendChild(getfooter)
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)
     gettheme()
