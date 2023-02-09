@@ -1,4 +1,4 @@
-"OK this is not functionnig so i create a server_side python script for transform pages..."
+"OK this is not functionnig so i create a server_side javascript command for transform pages..."
 /*function transformpage(docstr, titleofdoc){
     let toreturn = `
     <!DOCTYPE html>
