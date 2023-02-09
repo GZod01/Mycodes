@@ -1,3 +1,4 @@
+
 #!/usr/bin/bash
 Help(){
     echo "A script for creating page easily with the gzod01.fr api"
@@ -8,9 +9,8 @@ if [ $# -eq 0 ]
   then
     Help
 else
-    htmlfile = "$1.html"
-cat > $htmlfile <<-END
-    <!DOCTYPE html>
+cat > "$1.html" <<-END
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -30,5 +30,5 @@ cat > $htmlfile <<-END
 </body>
 </html>
 END
-
+vim "$1.html"
 fi
