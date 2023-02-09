@@ -1,4 +1,3 @@
-
 #!/usr/bin/bash
 Help(){
     echo "A script for creating page easily with the gzod01.fr api"
