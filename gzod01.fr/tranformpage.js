@@ -21,4 +21,4 @@ function transformpage(docstr, titleofdoc){
 </html>
     `
 }
-window.onload = () => {document.querySelector(':root').innerHTML = transformpage(document.getElementById('content'))}
+window.onload = () => {document.querySelector(':root').innerHTML = transformpage(document.getElementById('content'),document.title)}
