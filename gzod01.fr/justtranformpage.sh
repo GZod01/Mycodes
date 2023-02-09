@@ -1,5 +1,6 @@
 #!/usr/bin/sh
-cat > "$2" <<-EOM
+var1=$( cat "$1" )
+cat > "$1" <<-EOM
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,7 +15,7 @@ cat > "$2" <<-EOM
 <body>
     <div id="header"></div>
     <div class=content>
-        $(cat $1)
+        $var1
     </div>
     <div id="footer"></div>
 </body>
