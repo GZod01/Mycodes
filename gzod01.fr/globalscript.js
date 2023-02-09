@@ -1,21 +1,3 @@
-/*header:
-<header>
-    <div class="nav">
-        <a href="/">Accueil</a>
-        <a href="/games.html">Jeux</a>
-        <a href="/services.html">Services</a>
-        <a href="/projects.html">Projets</a>
-        <a href="/contact.html">Me contacter</a>
-        <a href="/sitemap.html">Plan Du Site</a>
-        <a href="/about.html">A Propos</a>
-        <a href="/legal.html">Mentions Légales</a>
-    </div>
-    <span class=themebutton onclick=switchtheme()>Switch the theme</span>
-</header>
-
-footer:
-
-*/
 function getpartials(){
     let default_header = document.createElement('header')
     let getheader = fetch('//api.gzod01.fr/partials/header.html').then(function (response) {
