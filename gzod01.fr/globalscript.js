@@ -1,6 +1,6 @@
 function getpartials(){
     let default_header = document.createElement('header')
-    let getheader = fetch('//api.gzod01.fr/partials/header.html').then(function (response) {
+    let getheader = fetch('//api.gzod01.fr/parts/header.html').then(function (response) {
         // The API call was successful!
         return response.text();
     }).then(function (html) {
@@ -12,7 +12,7 @@ function getpartials(){
     });
     default_header.appendChild(getheader)
     let default_footer = document.createElement('footer')
-    let getfooter = fetch('//api.gzod01.fr/partials/footer.html').then(function (response) {
+    let getfooter = fetch('//api.gzod01.fr/parts/footer.html').then(function (response) {
         // The API call was successful!
         return response.text();
     }).then(function (html) {
