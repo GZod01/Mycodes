@@ -1,4 +1,4 @@
-"OK this is not functionnig so i create a command for create ready pages..."
+"OK this is not functionning so i create a command for create ready pages..."
 /*function transformpage(docstr, titleofdoc){
     let toreturn = `
     <!DOCTYPE html>
