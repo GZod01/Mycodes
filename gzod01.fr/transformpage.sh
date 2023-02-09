@@ -30,9 +30,8 @@ cat <<-END
 </body>
 </html>
 END
-fi
-else 
-    cat > "$2" <<-END
+else
+    cat > "$2" <<-EOM
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -52,6 +51,5 @@ else
     <div id="footer"></div>
 </body>
 </html>
-END
-fi
+EOM
 fi
