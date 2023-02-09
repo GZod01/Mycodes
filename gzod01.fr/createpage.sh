@@ -1,7 +1,10 @@
-#!/usr/bin/sh
-originaltitle=$1
-title= ${originaltitle//"-"/" "}
-cat > $1 <<-END
+#!/usr/bin/bash
+Help(){
+    echo "A script for creating page easily with the gzod01.fr api"
+    echo "The only one argument you have to enter is the title of the file without the .html and without space (use - instead of space)"
+}
+htmlfile = "$1.html"
+cat > $htmlfile <<-END
     <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,7 +14,7 @@ cat > $1 <<-END
     <link rel="icon" href="//api.gzod01.fr/pictures/gzod01.png">
     <link rel="stylesheet" href="//api.gzod01.fr/css/style.css">
     <script src="//api.gzod01.fr/scripts/main.js"></script>
-    <title>${title}</title>
+    <title>$1</title>
 </head>
 <body>
     <div id="header"></div>
