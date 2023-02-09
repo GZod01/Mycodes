@@ -26,6 +26,7 @@ var getheader = `<header>
 <span class=themebutton onclick=switchtheme()>Switch the theme</span>
 </header>`
 function getpartials(){
+    // Bug with the fetch to api.gzod01.fr/parts/... TODO
     // let default_header = document.createElement('header')
     // let getheader = fetch('//api.gzod01.fr/parts/header.html').then(function (response) {
     //     // The API call was successful!
