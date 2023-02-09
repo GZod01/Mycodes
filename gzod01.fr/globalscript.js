@@ -31,18 +31,20 @@ footer:
 */
 window.onload=function(){
     let default_header = document.createElement('header')
-    default_header.innerHTML = `
-<div class="nav">
-    <a href="/">Accueil</a>
-    <a href="/games.html">Jeux</a>
-    <a href="/services.html">Services</a>
-    <a href="/projects.html">Projets</a>
-    <a href="/contact.html">Me contacter</a>
-    <a href="/sitemap.html">Plan Du Site</a>
-    <a href="/about.html">A Propos</a>
-    <a href="/legal.html">Mentions Légales</a>
-</div>
-<span class=themebutton onclick=switchtheme()>Switch the theme</span>`
+    let getheader = fetch('//api.gzod01.fr/partials/header.html').then(function (response) {
+        // The API call was successful!
+        return response.text();
+    }).then(function (html) {
+    
+        // Convert the HTML string into a document object
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(html, 'text/html');
+        return doc
+    }).catch(function (err) {
+        // There was an error
+        console.warn('Something went wrong.', err);
+    });
+    default_header.appendChild(getheader)
     let default_footer = document.createElement('footer')
     let getfooter = fetch('//api.gzod01.fr/partials/footer.html').then(function (response) {
         // The API call was successful!
