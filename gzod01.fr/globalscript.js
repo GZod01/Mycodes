@@ -58,10 +58,11 @@ function getpartials(){
     document.getElementById('header').replaceWith(default_header)
     document.getElementById('footer').replaceWith(default_footer)
 }
-window.onload=function(){
+function mainscript(){
     getpartials()
     gettheme()
 }
+window.onload = ()=>{mainscript()}
 function gettheme(){
     if(localStorage.getItem('colorscheme')==='dark'){
         var colorScheme = 'dark'
@@ -99,4 +100,3 @@ function switchtheme(){
         gettheme()
     }
 }
-
