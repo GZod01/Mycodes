@@ -3,4 +3,4 @@
 # host: $2
 # blogname : $3
 scp $1 $2:~/hugotemporar/$1
-ssh -t $2 "cd ~ ; ./bin/hugo_$3.sh ; exit"
+ssh -t $2 "cd ~ ; ./bin/hugo_$3.sh ~/hugotemporar/$1 ; exit"
