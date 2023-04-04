@@ -268,7 +268,17 @@
     var screenStatus = 0;
     var currentSlideNo = 1;
     var totalSides = 0;
-    
+    onkeyup = function(e){
+      if(e.keyCode==39 || e.keyCode==40 || e.keyCode==13){
+        "right"
+      }
+      if (e.keyCode==37 || e.keyCode==38){
+        "left"
+      }
+      if (e.keyCode==27){
+
+      }
+    }
     // run init script
     init();
     
