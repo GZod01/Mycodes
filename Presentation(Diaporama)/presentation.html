@@ -270,13 +270,18 @@
     var totalSides = 0;
     onkeyup = function(e){
       if(e.keyCode==39 || e.keyCode==40 || e.keyCode==13){
-        "right"
+        moveToRightSlide()
       }
       if (e.keyCode==37 || e.keyCode==38){
-        "left"
+        moveToLeftSlide()
       }
       if (e.keyCode==27){
-
+        if(screenStatus==0){
+          fullScreenMode()
+        }
+        else{
+          smallScreenMode()
+        }
       }
     }
     // run init script
