@@ -1,0 +1,357 @@
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    transition: all 0.5s ease;
+  }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ul {
+    margin-left: 2rem;
+  }
+  
+  ul li,
+  a {
+    font-size: 1.2em;
+  }
+  
+  .container {
+    background: #212121;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #presentation-area {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    background: purple;
+  }
+  
+  /* Styling all three sections */
+  #presentation-area .presentation {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    position: relative;
+  }
+  
+  #presentation-area .counter {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    color: #b6b6b6;
+  }
+  
+  #presentation-area .navigation {
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+  }
+  
+  /* On full screen mode */
+  #presentation-area.full-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  #presentation-area.full-screen .counter {
+    bottom: 15px;
+    left: 15px;
+  }
+  
+  #presentation-area.full-screen .navigation {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  #presentation-area.full-screen .navigation .btn:hover {
+    background: #201e1e;
+    color: #ffffff;
+  }
+  
+  #presentation-area.full-screen .navigation .btn-screen:hover {
+    background: #201e1e;
+  }
+  /* End full screen mode */
+  
+  /* Buttons */
+  .navigation button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .navigation .btn {
+    background: #464646;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .navigation .btn.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  
+  .navigation .btn-screen {
+    background: transparent;
+    color: #b6b6b6;
+    visibility: hidden;
+  }
+  
+  .btn-screen.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  
+  .btn-screen.hover {
+    color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  /* End Buttons */
+  
+  /* content */
+  .presentation .content {
+    padding: 2em;
+    width: 100%;
+    height: calc(100% - 100px);
+    z-index: 11;
+  }
+  
+  .presentation .content.grid {
+    display: grid;
+  }
+  
+  .presentation .content.grid.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .content .title {
+    font-size: 3em;
+    color: purple;
+  }
+  
+  .content .sub-title {
+    font-size: 2.5em;
+    color: purple;
+  }
+  
+  .content p {
+    font-size: 1.25em;
+    margin-bottom: 1rem;
+  }
+  /* End Content Stylesheet */
+  
+  /* Slide */
+  .presentation .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    opacity: 0;
+    transform: scale(0);
+    visibility: none;
+  }
+  
+  .slide.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+  
+  .slide .heading {
+    padding: 2rem;
+    background: purple;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  </style>
+<div class="container">
+    <div id="presentation-area">
+      <section class="presentation">
+        <div class="slide show">
+          <div class="heading">
+            Name
+          </div>
+          <div class="content grid center">
+            <h3 class="title">
+              Content
+            </h3>
+          </div>
+        </div>
+  
+        <div class="slide">
+          <div class="heading">
+            Name
+          </div>
+          <div class="content grid center">
+            Content
+          </div>
+        </div>
+      </section>
+  
+      <section class="counter">
+        1 of 6
+      </section>
+  
+      <section class="navigation">
+        <button id="full-screen" class="btn-screen show">
+          <i class="fas fa-expand"></i>
+        </button>
+  
+        <button id="small-screen" class="btn-screen">
+          <i class="fas fa-compress"></i>
+        </button>
+  
+        <button id="left-btn" class="btn">
+          <i class="fas fa-solid fa-caret-left"></i>
+        </button>
+  
+        <button id="right-btn" class="btn">
+          <i class="fa-solid fa-caret-right"></i>
+        </button>
+      </section>
+    </div>
+  </div>
+  <script>
+    // get elements
+    let presentation = document.querySelector(".presentation");
+    let slides = document.querySelectorAll(".slide");
+    let currentSlide = document.querySelector(".slide.show");
+    
+    var slideNumber = document.querySelector(".counter");
+    var toLeftBtn = document.querySelector("#left-btn");
+    var toRightBtn = document.querySelector("#right-btn");
+    
+    let presentationController = document.querySelector("#presentation-area");
+    var toFullScreenBtn = document.querySelector("#full-screen");
+    var toSmallScreenBtn = document.querySelector("#small-screen");
+    
+    // initailize defualt values
+    var screenStatus = 0;
+    var currentSlideNo = 1;
+    var totalSides = 0;
+    
+    // run init script
+    init();
+    
+    function init() {
+      getCurrentSlideNo();
+      totalSides = slides.length;
+      setSlideNo();
+      hideLeftButton();
+      hideRightButton();
+    }
+    
+    // handle clicks on left and right icons
+    toLeftBtn.addEventListener("click", moveToLeftSlide);
+    toRightBtn.addEventListener("click", moveToRightSlide);
+    
+    // handle full screen and small screen modes
+    toFullScreenBtn.addEventListener("click", fullScreenMode);
+    toSmallScreenBtn.addEventListener("click", smallScreenMode);
+    
+    // hide left button at first page
+    function hideLeftButton() {
+      if (currentSlideNo == 1) {
+        toLeftBtn.classList.remove("show");
+      } else {
+        toLeftBtn.classList.add("show");
+      }
+    }
+    
+    // hide right button at last page
+    function hideRightButton() {
+      if (currentSlideNo === totalSides) {
+        toRightBtn.classList.remove("show");
+      } else {
+        toRightBtn.classList.add("show");
+      }
+    }
+    
+    // moves to left slide
+    function moveToLeftSlide() {
+      var tempSlide = currentSlide;
+      currentSlide = currentSlide.previousElementSibling;
+      tempSlide.classList.remove("show");
+      currentSlide.classList.add("show");
+    
+      init();
+    }
+    
+    // moves to right slide
+    function moveToRightSlide() {
+      var tempSlide = currentSlide;
+      currentSlide = currentSlide.nextElementSibling;
+      tempSlide.classList.remove("show");
+      currentSlide.classList.add("show");
+    
+      init();
+    }
+    
+    // get current slide
+    function getCurrentSlideNo() {
+      let counter = 0;
+    
+      slides.forEach((slide, i) => {
+        counter++;
+    
+        if (slide.classList.contains("show")) {
+          currentSlideNo = counter;
+        }
+      });
+    }
+    
+    // go full screen
+    function fullScreenMode() {
+      presentationController.classList.add("full-screen");
+      toFullScreenBtn.classList.remove("show");
+      toSmallScreenBtn.classList.add("show");
+    
+      screenStatus = 1;
+    }
+    
+    // switch to small screen
+    function smallScreenMode() {
+      presentationController.classList.remove("full-screen");
+      toFullScreenBtn.classList.add("show");
+      toSmallScreenBtn.classList.remove("show");
+    
+      screenStatus = 0;
+    }
+    
+    // update counter
+    function setSlideNo() {
+      slideNumber.innerText = `${currentSlideNo} of ${totalSides}`;
+    }
+    </script>
