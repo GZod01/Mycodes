@@ -466,10 +466,14 @@
         let res = dparse.parseFromString(this.result,"text/html")
         presentation.innerHTML=""
         for(let abc = 0; abc<res.body.childNodes.length;abc++){
-          presentation.childNodes.push(res.body.childNodes[i])
+          presentation.childNodes.push(res.body.childNodes[abc])
+          try{
+            reinitDiapo()
+            init()
+          }catch(e){
+            console.warn(e)
+          }
         }
-        reinitDiapo()
-        init()
       }
       fileReader.readAsText(file)
     }
