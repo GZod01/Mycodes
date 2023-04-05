@@ -44,7 +44,7 @@
         function transform_PDF_Arr_to_Diapo(obj){
             let finalfile = ""
             obj = JSON.parse(obj)
-            let a = obj.forEach(elem => {
+            console.log(obj.forEach(elem => {
                 let itm = elem.items
                 let celems = ""
                 itm.forEach(itmel=>{
@@ -59,9 +59,7 @@
                 })
                 let cslide = `<diapo-slide>${celems}</diapo-slide>`
                 finalfile = finalfile +"\n"+cslide
-                return "hello"
-            })
-            console.log(a)
+            }))
         }
         function download(data) {
             var file = new Blob([data], {type: "application/json"});
