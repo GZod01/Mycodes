@@ -71,15 +71,15 @@
                     }
                     let cel = ""
                     if(itmel.fontName==="g_d0_f1"){
-                        cel=`<diapo-title>${itmel.str}</diapo-title>`
+                        cel=`\t<diapo-title>${itmel.str}</diapo-title>`
                     }
                     else{
-                        cel=`<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
+                        cel=`\t<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
                     }
                     celems =celems+"\n"+cel
                     //console.log(itmprocess+"/"+itm.length+" ; "+itemsProcessed+"/"+obj.length)
                     if(lastitm){
-                        let cslide = `<diapo-slide>${celems}</diapo-slide>`
+                        let cslide = `<diapo-slide>${celems}\n</diapo-slide>`
                         finalfile = finalfile +"\n"+cslide
                         if(lastobj){
                             //console.log('helloWorld')
