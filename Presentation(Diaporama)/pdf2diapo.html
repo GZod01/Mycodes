@@ -31,7 +31,7 @@
                             page.getTextContent().then(function(textContent) {
                                 parr.push(textContent)
                                 lastdo=true
-                                if(opdo){
+                                if(opdo==true){
                                     console.log(opdo)
                                     transform_PDF_Arr_to_Diapo(JSON.stringify(parr));
                                     console.log("hello:world: "+parr)
