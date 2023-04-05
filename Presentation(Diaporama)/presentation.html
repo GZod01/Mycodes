@@ -464,6 +464,7 @@
       fileReader.onload = function(){
         let dparse = new DOMParser
         let res = dparse.parseFromString(this.result,"text/html")
+        presentation.innerHTML=""
         presentation.append(res)
         reinitDiapo()
         init()
