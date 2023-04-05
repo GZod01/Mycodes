@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF_2_Diapo</title>
+</head>
+<body>
+    <input type="file" id="pdfInput">
+    <button id="convertButton">Convertir</button>
+    <script>
+        var a = document.getElementById('pdfInput')
+        var b = document.getElementById('convertButton')
+        b.onclick = function(){
+            var file = a.files[0]
+            var fileReader = new FileReader()
+            fileReader.onload = function(){
+                var typedarray = new Uint8Array(this.result)
+                pdfjsLib.getDocument(typedarray).promise.then(function(pdf){
+                    let parr = []
+                    let opdo=false
+                    for(let i = 1; i <= pdf.numPages; i++) {
+                        let lastdo = false
+                        if(i===pdf.numPages){
+                            opdo=true
+                        }
+                        pdf.getPage(i).then(function(page) {
+                            page.getTextContent().then(function(textContent) {
+                                parr.push(textContent)
+                                lastdo=true
+                                if(opdo && lastdo){
+                                    console.log(lastdo)
+                                    transform_PDF_Arr_to_Diapo(JSON.stringify(parr));
+                                    console.log("hello:world: "+parr)
+                                }
+                            });
+                        });
+                    }
+                    console.log(parr)
+                    return parr
+                })
+            }
+            fileReader.readAsArrayBuffer(file);
+        }
+        function transform_PDF_Arr_to_Diapo(obj){
+            let finalfile = ""
+            console.log('hello : '+obj)
+            obj = JSON.parse(obj)
+            obj.forEach(elem => {
+                let itm = elem.items
+                let celems = ""
+                itm.forEach(itmel=>{
+                    let cel = ""
+                    if(itmel.fontName==="g_d0_f1"){
+                        cel=`<diapo-title>${itmel.str}</diapo-title>`
+                    }
+                    else{
+                        cel=`<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
+                    }
+                    celems =celems+"\n"+cel
+                })
+                let cslide = `<diapo-slide>${celems}</diapo-slide>`
+                finalfile = finalfile +"\n"+cslide
+            });
+            download(finalfile)
+        }
+        function download(data) {
+            var file = new Blob([data], {type: "application/json"});
+            if (window.navigator.msSaveOrOpenBlob)
+                window.navigator.msSaveOrOpenBlob(file, "yourSavedDiapo.diapo");
+            else {
+                var a = document.createElement("a"),
+                        url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = "yourSavedDiapo.diapo";
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);  
+                }, 0); 
+            }
+        }
+    </script>
+</body>
+</html>
