@@ -462,7 +462,7 @@
         if(objdiv.innerHTML==""){
           objdiv.remove()
         }
-        if(objdiv.innerHTML=="•"){
+        else if(objdiv.innerHTML=="•"){
           let span = document.createElement('span')
           objdiv.replaceWith(span)
           objdiv.style.width=this.width
