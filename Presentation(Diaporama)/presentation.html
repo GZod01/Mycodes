@@ -458,7 +458,12 @@
         let objdiv = document.createElement('div')
         objdiv.style.width=this.width
         objdiv.style.height=this.height
-        objdiv.innerHTML=this.innerHTML
+        if(this.width ==0 & this.height==0){
+          objdiv.innerHTML="<br>"
+        }
+        else{
+          objdiv.innerHTML=this.innerHTML
+        }
         parentNode.appendChild(div)
         this.remove()
       }
