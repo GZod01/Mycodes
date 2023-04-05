@@ -462,6 +462,13 @@
         if(objdiv.innerHTML==""){
           objdiv.remove()
         }
+        if(objdiv.innerHTML=="•"){
+          let span = document.createElement('span')
+          objdiv.replaceWith(span)
+          objdiv.style.width=this.width
+          objdiv.style.height=this.height
+          objdiv.innerHTML=this.innerHTML
+        }
         else{
           parentNode.appendChild(objdiv)
         }
