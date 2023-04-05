@@ -270,6 +270,25 @@
     var screenStatus = 0;
     var currentSlideNo = 1;
     var totalSides = 0;
+    function reinitDiapo(){
+      // get elements
+      presentation = document.querySelector(".presentation");
+      slides = document.querySelectorAll(".slide");
+      currentSlide = document.querySelector(".slide.show");
+      
+      slideNumber = document.querySelector(".counter");
+      toLeftBtn = document.querySelector("#left-btn");
+      toRightBtn = document.querySelector("#right-btn");
+      
+      presentationController = document.querySelector("#presentation-area");
+      toFullScreenBtn = document.querySelector("#full-screen");
+      toSmallScreenBtn = document.querySelector("#small-screen");
+      
+      // initailize defualt values
+      screenStatus = 0;
+      currentSlideNo = 1;
+      totalSides = 0;
+    }
     onkeyup = function(e){
       if(e.keyCode==39 || e.keyCode==40 || e.keyCode==13){
         hideRightButton()
