@@ -465,7 +465,7 @@
         let dparse = new DOMParser
         let res = dparse.parseFromString(this.result,"text/html")
         presentation.innerHTML=""
-        presentation.childNodes = res.document.body.childNodes
+        presentation.childNodes = res.body.childNodes
         reinitDiapo()
         init()
       }
