@@ -462,7 +462,7 @@
       }
       let fileReader = new FileReader
       fileReader.onload = function(){
-        presentation.innerHTML=this.innerHTML
+        presentation.innerHTML=this.result
         // let dparse = new DOMParser
         // let res = dparse.parseFromString(this.result,"text/html")
         // presentation.innerHTML=""
