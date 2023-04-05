@@ -457,6 +457,9 @@
     let fbutton = document.querySelector('button#fileImport')
     fbutton.onclick = function(){
       let file = fin.files[0]
+      if(file==undefined){
+        return
+      }
       let fileReader = new FileReader
       fileReader.onload = function(){
         presentation.innerHTML = this.result
