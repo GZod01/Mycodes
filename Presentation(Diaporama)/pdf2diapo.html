@@ -68,7 +68,7 @@
                         cel=`<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
                     }
                     celems =celems+"\n"+cel
-                    console.log(itmprocess+"/"+itm.length)
+                    console.log(itmprocess+"/"+itm.length+" ; "+itemsProcessed+"/"+obj.length)
                     if(lastitm){
                         let cslide = `<diapo-slide>${celems}</diapo-slide>`
                         finalfile = finalfile +"\n"+cslide
