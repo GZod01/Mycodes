@@ -430,7 +430,7 @@
       connectedCallback() {
         let div = document.createElement('div')
         div.className="slide"
-        div.childNodes=this.childNodes
+        div.innerHTML=this.innerHTML
         this.replaceWith(div)
       }
     }
@@ -439,7 +439,7 @@
       connectedCallback() {
         let div = document.createElement('div')
         div.className="heading"
-        div.childNodes=this.childNodes
+        div.innerHTML=this.innerHTML
         this.replaceWith(div)
       }
     }
@@ -448,7 +448,7 @@
       connectedCallback() {
         let div = document.createElement('div')
         div.className="content grid center"
-        div.childNodes=this.childNodes
+        div.innerHTML=this.innerHTML
         this.replaceWith(div)
       }
     }
@@ -462,19 +462,20 @@
       }
       let fileReader = new FileReader
       fileReader.onload = function(){
-        let dparse = new DOMParser
-        let res = dparse.parseFromString(this.result,"text/html")
-        presentation.innerHTML=""
-        res.body.childNodes.forEach(e=>{
-          presentation.appendChild(e)
-          try{
-            reinitDiapo()
-            init()
-          }
-          catch(e){
-            console.warn(e)
-          }
-        })
+        presentation.innerHTML=this.innerHTML
+        // let dparse = new DOMParser
+        // let res = dparse.parseFromString(this.result,"text/html")
+        // presentation.innerHTML=""
+        // res.body.childNodes.forEach(e=>{
+        //   presentation.appendChild(e)
+        //   try{
+        //     reinitDiapo()
+        //     init()
+        //   }
+        //   catch(e){
+        //     console.warn(e)
+        //   }
+        // })
       }
       fileReader.readAsText(file)
     }
