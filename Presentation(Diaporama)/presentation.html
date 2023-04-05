@@ -203,6 +203,48 @@
   }
   </style>
   </head>
+<input type="file" id="fileInput" name="fileInput"><label for="fileInput">Import Your .diapo file (make with <a href="pdf2diapo.html">PDF_2_DIAPO</a></label>
+<button id="fileImport">Import!</button>
+<script>
+  class diapoHeader extends HTMLElement {
+    connectedCallback() {
+      let div = document.createElement('div')
+      div.className="heading"
+      div.innerHTML=this.innerHTML
+      this.replaceWith(div)
+    }
+  }
+  customElements.define("diapo-header", diapoHeader);
+  class diapoObj extends HTMLElement {
+    connectedCallback() {
+      let div = document.createElement('div')
+      div.className="content grid center"
+      div.innerHTML=this.innerHTML
+      this.replaceWith(div)
+    }
+  }
+  customElements.define("diapo-obj", diapoObj);
+  class diapoSlide extends HTMLElement {
+    connectedCallback() {
+      let div = document.createElement('div')
+      div.className="slide"
+      div.innerHTML=this.innerHTML
+      this.replaceWith(div)
+    }
+  }
+  customElements.define("diapo-slide", diapoSlide);
+  let fin = document.querySelector('input#fileInput')
+  let fcon = document.querySelector('section.presentation')
+  let fbutton = document.querySelector('button#fileImport')
+  fbutton.onclick = function(){
+    let file = fin.files[0]
+    let fileReader = new FileReader
+    fileReader.onload = function(){
+      fcon.innerHTML = this.result
+    }
+    fileReader.readAsText(file)
+  }
+</script>
 <div class="container">
     <div id="presentation-area">
       <section class="presentation">
