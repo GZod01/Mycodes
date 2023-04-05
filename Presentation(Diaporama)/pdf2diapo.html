@@ -13,7 +13,12 @@
     <script>
         var a = document.getElementById('pdfInput')
         var b = document.getElementById('convertButton')
+        var bpresssed = false
         b.onclick = function(){
+            if(bpresssed){
+                return
+            }
+            bpresssed=true
             var file = a.files[0]
             var fileReader = new FileReader()
             fileReader.onload = function(){
@@ -31,6 +36,7 @@
                                 parr.push(textContent)
                                 lastdo=true
                                 if(opdo==true){
+                                    console.log('helloworld')
                                     transform_PDF_Arr_to_Diapo(JSON.stringify(parr));
                                 }
                             });
@@ -68,12 +74,12 @@
                         cel=`<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
                     }
                     celems =celems+"\n"+cel
-                    console.log(itmprocess+"/"+itm.length+" ; "+itemsProcessed+"/"+obj.length)
+                    //console.log(itmprocess+"/"+itm.length+" ; "+itemsProcessed+"/"+obj.length)
                     if(lastitm){
                         let cslide = `<diapo-slide>${celems}</diapo-slide>`
                         finalfile = finalfile +"\n"+cslide
                         if(lastobj){
-                            console.log('helloWorld')
+                            //console.log('helloWorld')
                             download(finalfile)
                         }
                     }
