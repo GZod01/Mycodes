@@ -466,6 +466,7 @@
         let res = dparse.parseFromString(this.result,"text/html")
         presentation.innerHTML=""
         document.body.append(res)
+        console.log(res)
         reinitDiapo()
         init()
       }
