@@ -24,7 +24,7 @@
                     for(let i = 1; i <= pdf.numPages; i++) {
                         let lastdo = false
                         console.log(i)
-                        if(i===pdf.numPages){
+                        if(i==pdf.numPages){
                             opdo=true
                         }
                         pdf.getPage(i).then(function(page) {
