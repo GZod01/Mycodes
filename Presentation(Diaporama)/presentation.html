@@ -426,30 +426,33 @@
     }
     </script>
   <script>
-    class diapoHeader extends HTMLDivElement {
+    class diapoSlide extends HTMLElement {
       connectedCallback() {
-        this.className="heading"
-        this.innerHTML=this.innerHTML
-
-      }
-    }
-    customElements.define("diapo-header", diapoHeader);
-    class diapoObj extends HTMLDivElement {
-      connectedCallback() {
-        this.className="content grid center"
-        this.innerHTML=this.innerHTML
-
-      }
-    }
-    customElements.define("diapo-obj", diapoObj);
-    class diapoSlide extends HTMLDivElement {
-      connectedCallback() {
-        this.className="slide"
-        this.innerHTML=this.innerHTML
-
+        let div = document.createElement('div')
+        div.className="slide"
+        div.innerHTML=this.innerHTML
+        this.replaceWith(div)
       }
     }
     customElements.define("diapo-slide", diapoSlide);
+    class diapoHeader extends HTMLElement {
+      connectedCallback() {
+        let div = document.createElement('div')
+        div.className="heading"
+        div.innerHTML=this.innerHTML
+        this.replaceWith(div)
+      }
+    }
+    customElements.define("diapo-header", diapoHeader);
+    class diapoObj extends HTMLElement {
+      connectedCallback() {
+        let div = document.createElement('div')
+        div.className="content grid center"
+        div.innerHTML=this.innerHTML
+        this.replaceWith(div)
+      }
+    }
+    customElements.define("diapo-obj", diapoObj);
     let fin = document.querySelector('input#fileInput')
     let fbutton = document.querySelector('button#fileImport')
     fbutton.onclick = function(){
