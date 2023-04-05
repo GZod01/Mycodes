@@ -37,8 +37,10 @@
                                 parr.push(textContent)
                                 lastdo=true
                                 if(opdo==true){
-                                    console.log('helloworld')
-                                    transform_PDF_Arr_to_Diapo(JSON.stringify(parr));
+                                    if(parr.length == pdf.numPages-1){
+                                        console.log('helloworld')
+                                        transform_PDF_Arr_to_Diapo(JSON.stringify(parr));
+                                    }
                                 }
                             });
                         });
