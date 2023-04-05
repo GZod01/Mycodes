@@ -465,9 +465,16 @@
         let dparse = new DOMParser
         let res = dparse.parseFromString(this.result,"text/html")
         presentation.innerHTML=""
-        presentation.append(res.body.childNodes)
-        reinitDiapo()
-        init()
+        res.body.childNodes.forEach(e=>{
+          presentation.appendChild(e)
+          try{
+            reinitDiapo()
+            init()
+          }
+          catch(e){
+            console.warn(e)
+          }
+        })
       }
       fileReader.readAsText(file)
     }
