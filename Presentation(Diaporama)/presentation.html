@@ -414,13 +414,13 @@
     }
     customElements.define("diapo-slide", diapoSlide);
     let fin = document.querySelector('input#fileInput')
-    let fcon = document.getElementsByClassName('presentation')
     let fbutton = document.querySelector('button#fileImport')
     fbutton.onclick = function(){
       let file = fin.files[0]
       let fileReader = new FileReader
       fileReader.onload = function(){
-        fcon.innerHTML = this.result
+        presentation.innerHTML = this.result
+        init()
       }
       fileReader.readAsText(file)
     }
