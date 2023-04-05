@@ -48,7 +48,7 @@
             let finalfile = ""
             console.log('hello : '+obj)
             obj = JSON.parse(obj)
-            obj.forEach(elem => {
+            let a = obj.forEach(elem => {
                 let itm = elem.items
                 let celems = ""
                 itm.forEach(itmel=>{
@@ -63,7 +63,8 @@
                 })
                 let cslide = `<diapo-slide>${celems}</diapo-slide>`
                 finalfile = finalfile +"\n"+cslide
-            }).then(function(){download(finalfile)})
+            })
+            co
         }
         function download(data) {
             var file = new Blob([data], {type: "application/json"});
