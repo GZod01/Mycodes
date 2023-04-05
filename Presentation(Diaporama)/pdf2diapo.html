@@ -44,10 +44,21 @@
         function transform_PDF_Arr_to_Diapo(obj){
             let finalfile = ""
             obj = JSON.parse(obj)
+            let itemsProcessed = 0;
             console.log(obj.forEach(elem => {
+                itemsProcessed++
+                let lastobj=false
+                if(itemsProcessed==obj.length){
+                    lastobj= true
+                }
                 let itm = elem.items
                 let celems = ""
+                let itmprocess = 0
                 itm.forEach(itmel=>{
+                    lastitm=false
+                    if(itemsProcessed==itm.length){
+                        lastitm = true
+                    }
                     let cel = ""
                     if(itmel.fontName==="g_d0_f1"){
                         cel=`<diapo-title>${itmel.str}</diapo-title>`
@@ -56,9 +67,14 @@
                         cel=`<diapo-content width="${itmel.width}" height="${itmel.height}">${itmel.str}</diapo-content>`
                     }
                     celems =celems+"\n"+cel
+                    if(lastitm){
+                        let cslide = `<diapo-slide>${celems}</diapo-slide>`
+                        finalfile = finalfile +"\n"+cslide
+                        if(lastobj){
+                            download(finalfile)
+                        }
+                    }
                 })
-                let cslide = `<diapo-slide>${celems}</diapo-slide>`
-                finalfile = finalfile +"\n"+cslide
             }))
         }
         function download(data) {
