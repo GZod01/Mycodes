@@ -347,7 +347,6 @@
     
     // hide right button at last page
     function hideRightButton() {
-      checkSlideShow()
       if (currentSlideNo === totalSides) {
         toRightBtn.classList.remove("show");
       } else {
@@ -368,6 +367,7 @@
     
     // moves to right slide
     function moveToRightSlide() {
+      checkSlideShow()
       var tempSlide = currentSlide;
       currentSlide = currentSlide.nextElementSibling;
       tempSlide.classList.remove("show");
