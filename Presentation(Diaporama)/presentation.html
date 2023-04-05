@@ -426,30 +426,27 @@
     }
     </script>
   <script>
-    class diapoHeader extends HTMLElement {
+    class diapoHeader extends HTMLDivElement {
       connectedCallback() {
-        let div = document.createElement('div')
-        div.className="heading"
-        div.innerHTML=this.innerHTML
-        this.replaceWith(div)
+        this.className="heading"
+        this.innerHTML=this.innerHTML
+
       }
     }
     customElements.define("diapo-header", diapoHeader);
-    class diapoObj extends HTMLElement {
+    class diapoObj extends HTMLDivElement {
       connectedCallback() {
-        let div = document.createElement('div')
-        div.className="content grid center"
-        div.innerHTML=this.innerHTML
-        this.replaceWith(div)
+        this.className="content grid center"
+        this.innerHTML=this.innerHTML
+
       }
     }
     customElements.define("diapo-obj", diapoObj);
-    class diapoSlide extends HTMLElement {
+    class diapoSlide extends HTMLDivElement {
       connectedCallback() {
-        let div = document.createElement('div')
-        div.className="slide"
-        div.innerHTML=this.innerHTML
-        this.replaceWith(div)
+        this.className="slide"
+        this.innerHTML=this.innerHTML
+
       }
     }
     customElements.define("diapo-slide", diapoSlide);
