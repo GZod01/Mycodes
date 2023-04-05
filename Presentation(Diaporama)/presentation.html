@@ -270,8 +270,13 @@
     var screenStatus = 0;
     var currentSlideNo = 1;
     var totalSides = 0;
+    function checkSlideShow(){
+      if(document.querySelector('.slide.show')==undefined || document.querySelector('.slide.show')==null){
+        document.querySelector('.slide').className="slide show"
+      }
+    }
     function reinitDiapo(){
-      document.querySelector('#slide').className="slide show"
+      checkSlideShow()
       // get elements
       presentation = document.querySelector(".presentation");
       slides = document.querySelectorAll(".slide");
@@ -342,6 +347,7 @@
     
     // hide right button at last page
     function hideRightButton() {
+      checkSlideShow()
       if (currentSlideNo === totalSides) {
         toRightBtn.classList.remove("show");
       } else {
@@ -351,6 +357,7 @@
     
     // moves to left slide
     function moveToLeftSlide() {
+      checkSlideShow()
       var tempSlide = currentSlide;
       currentSlide = currentSlide.previousElementSibling;
       tempSlide.classList.remove("show");
