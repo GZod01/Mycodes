@@ -464,9 +464,8 @@
       fileReader.onload = function(){
         let dparse = new DOMParser
         let res = dparse.parseFromString(this.result,"text/html")
-        console.log(res)
         presentation.innerHTML=""
-        document.body.append(res)
+        presentation.childNodes = res.document.body.childNodes
         reinitDiapo()
         init()
       }
