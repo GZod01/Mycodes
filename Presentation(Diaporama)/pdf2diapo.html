@@ -27,7 +27,7 @@
                         if(i===pdf.numPages){
                             opdo=true
                         }
-                        /*pdf.getPage(i).then(function(page) {
+                        pdf.getPage(i).then(function(page) {
                             page.getTextContent().then(function(textContent) {
                                 parr.push(textContent)
                                 lastdo=true
@@ -37,9 +37,8 @@
                                     console.log("hello:world: "+parr)
                                 }
                             });
-                        });*/
+                        });
                     }
-                    console.log(parr)
                     return parr
                 })
             }
@@ -64,8 +63,7 @@
                 })
                 let cslide = `<diapo-slide>${celems}</diapo-slide>`
                 finalfile = finalfile +"\n"+cslide
-            });
-            download(finalfile)
+            }).then(function(){download(finalfile)})
         }
         function download(data) {
             var file = new Blob([data], {type: "application/json"});
