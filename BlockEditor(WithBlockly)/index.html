@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+    <title>Bloc Editor</title>
+</head>
+<body>
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <script>
+        var toolbox = {
+  "kind": "flyoutToolbox",
+  "contents": [
+    {
+      "kind": "block",
+      "type": "controls_if"
+    },
+    {
+      "kind": "block",
+      "type": "controls_repeat_ext"
+    },
+    {
+      "kind": "block",
+      "type": "logic_compare"
+    },
+    {
+      "kind": "block",
+      "type": "math_number"
+    },
+    {
+      "kind": "block",
+      "type": "math_arithmetic"
+    },
+    {
+      "kind": "block",
+      "type": "text"
+    },
+    {
+      "kind": "block",
+      "type": "text_print"
+    },
+  ]
+}
+        var workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
+    </script>
+</body>
+</html>
